@@ -38,6 +38,7 @@ label start:
     show eileen happy
 
     # These display lines of dialogue.
+    scene black
     e "Welcome to my little VN!"
 
     e "This is my first time adventuring out into this kinda stuff, so sorry if it doesn't meet your expectations :/"
@@ -88,7 +89,52 @@ label start:
 
 
 
-    mc "alright, lets go take a look then... \n It's not like i'd be able to get "
+    mc "alright, lets go take a look then... \n It's not like i'd be able to get sleep if I ignore this..."
+
+    scene bg cemetetary
+    with fade
+
+    n "As mc continues to follow the noise, he eventually arrives at the local cemetetary."
+
+    mc "Yeah no. I'm not doing this."
+
+    mc "There is no way that i'm ever going to go into that old, unsettling graveyard at god-knows what time at night."
+
+    "???" "Well, its a good thing you won't have to ~"
+
+    mc "HUH??? WHAT WAS THAT???"
+
+    n "A cold chill envelops mc's body, reaching all the way down to the bone."
+
+    mc "SCREW THIS"
+    scene bg middletown
+    with fade
+    n "mc makes a mad dash back towards his house, however..."
+
+    #make reaper sprite show up in the middle of the screen
+
+    mc "WHAT THE F*** IS THAT?????"
+
+    "???" "I beckon thee, join me in the world that comes afte-"
+
+    mc "OUT OF THE WAY!"
+    #play punch sfx, and slide reaper off screen
+
+    n "mc continues to make a mad dash for his house."
+
+
+    scene  bg entrywayNight with fade
+    mc"*pant* *pant* *pant*"
+    mc"WHat was that???"
+    mc" You know what? screw this, I'm going to bed"
+
+    scene bg bedroom with fade
+    mc "Maybe I'll be able to make sense of this tommorow morning."    
+    scene bg black with with fade
+    n"End of day one."
+    #add save prompt
+    n"save?"
+
     # This ends the game.
 
     return
