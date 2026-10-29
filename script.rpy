@@ -433,6 +433,8 @@ label start:
 
     l "Alright, I'll bring out the food."
 
+    #food is paella (mmmmm yummy)
+
     "Lynne's Mother" "So, I'm assuming that you go to school around here?"
 
     mc "Yeah, I actually go to the school up the street from here. "
@@ -444,6 +446,229 @@ label start:
     mc "Oh, you don't have to apologize. I needed a break from studying anyways."
 
     l "I got the food! Lets dig in!"
-    # This ends the game.
 
+    n "They sit down, and begin to enjoy the rather average-tasting takeout."
+
+    l "If you're currently going to that school up the street from here, do you mind showing me around a bit after you're done with exams?"
+
+    mc "If I have the time, yeah. I don't really mind doing that."
+
+    l "Thanks."
+
+    l "On the topic of stuff nearby, where exactly do you live?"
+
+    mc "Not too far from here to be completely honest. It's due north, and it'll probably take you like 15 minutes to walk there."
+
+    mc "If you're wondering about the house number, it's 3617, the house with the tan roof."
+
+    l "Alright, I'll keep that in mind. I'll probably swing by there after exam season so you can show me around."
+
+    "Lynne's Mother" "Speaking of your house, did you call home and tell your folks that you'd be eating with us tonight? I'd hate to give them a scare!"
+
+    mc "It's fine, I made sure to send them a quick text not long after I started helping the rest of you."
+
+    "Lynne's Father" "Your parents were ok with it?"
+
+    mc "Yeah. They're usually pretty hands off."
+
+    "Lynne's Mother" "Are they really? I'd never be caught dead letting my daughter wander around at night!"
+
+    mc "That's just how my family is, and how its always been. Nothing really that special."
+
+    n "The topic eventually shifts, and after a bit more conversation, everyone finishes eating."
+
+    "Lynne's Mother" "Feel free to head out!"
+
+    mc "But I haven't helped with the dishes yet?"
+
+    "Lynne's Father" "You've already done enough with helping us haul those boxes inside earlier, I'd hate to ask anything more of you."
+
+    "Lynne's Mother" "Anyways, your parents are probably waiting for you now anyways."
+
+    mc "Are you sure you don't want any help? I'd be more than happy to help out a bit more."
+
+    "Lynne's Mother" "Yeah, we should be fine. Once again, thank you for the help!"
+
+    mc "Alright then, I'll head out. If you need any more help, just let me know!"
+
+    n "MC heads out, and starts on his way home."
+
+    g "God, we are so screwed. What time is it anyways?"
+
+    mc "It's 11:35."
+
+    g "Good. If you rush, you might be ab-"
+
+    mc "We need to have a serious conversation."
+
+    g "Huh?"
+
+    mc "You heard what I said. We need to have a serious conversation about boundaries."
+
+    mc "You decided to come into MY body, and so far you've done nothing but be rude to me, make demands, and act like what you want comes before everything else."
+
+    mc "I didn't ask for any of this, and here you are acting like you have any right to impose upon the way that I live my life. So, I think that I'm justified for wanting to set some boundaries."
+    
+    mc "First off, you don't have any juristdiction over how I'm going to live my life."
+
+    #reaper in distance
+
+    mc "Second, you will refrain from talking to me while i'm around other people. I can't afford to look schitzophrenic. "
+    
+    #reaper gets closer
+
+    g "Uhhhhhhhh...."
+    
+    mc "And thirdly, I expect you to respect my privacy as much as you possibly can."
+
+    #reaper is fully visible
+
+    mc "It looks like we're gonna have to continue this conversation later."
+
+    # running sfx
+
+    scene bg closerStreet #slide this one into the screen
+
+    #how should I indicate the fact that theyre currently running?
+
+    g "What time is it?"
+
+    mc "It looks like its 11:52 now, why?"
+
+    g "Alright then. We have 8 minutes to get back before a second one shows up. "
+
+    mc "A SECOND ONE???"
+
+    g "Yeah. There can only be three of them chasing us at once, but they're all extraordinarily crafty."
+
+    g "If things get bad, I do have a bit of a trump card, but I'm not too sure if you'd like it."
+
+    mc "Never mind that, we just need to get home."
+
+    mc "We're less than 5 minutes away from home, if I keep at this pace, we should be there before midnight."
+
+    "???""HEY! SLOW DOWN A LITTLE WILL YA!" 
+
+    mc "Huh?"
+
+    g "Huh?"
+
+    l "C'MON, SLOWING DOWN A LITTLE WON'T KILL YOU!"
+
+    l "I JUST GOTTA GIVE YOU SOME OF THE LEFTOVERS!"
+
+    g "Oh my lord. its going to get infinetly worse now."
+
+    mc "What do you mean by that?"
+
+    g "The reason why reapers SPECIFICALLY come out at night is because they're still visible to mortals. If they came out during the day, they'd just cause problems. That's why more show up as the night progresses."
+
+    mc "Ah. So what you're saying is: We are about to get someone innocent implicated in our problems."
+
+    g "Yeah, pretty much."
+
+    mc "It'd probably be best to just stop, grab the food, and then keep running at this point; It'd get her to leave faster so she won't end up getting implicated in our mess."
+
+    g "Sounds like a plan."
+
+    n "mc starts to slow down, and after a few seconds, comes to a complete stop, not daring to start walking backwards and losing more time."
+
+    n "After a few seconds, Lynne catches up to him."
+
+    l "*pant* *pant*"
+
+    l "God, you're fast. Anyways, my folks wanted to give you some of the leftovers from the food."
+
+    n "Lynne hands mc a small plastic bag, with some tupperware containers inside of it."
+
+    mc "Thanks! I do have to get going now, so see y-"
+
+    n "A loud shriek pierces the nights tranquility."
+    #cool auraful reaper cg
+    "???" "COME FORTH, DENIER OF DEATH'S CERTAINTY!"
+
+    mc "Sh*t."
+
+    l "What was that !?"
+
+    mc "C'mon, we gotta go. I don't have time to explain."
+
+    l "Why the hell are you being chased by a reaper?"
+
+    g "!!!"
+    
+    mc "How do you know what that is?"
+
+    l "How do you know??"
+
+    l "The only reason I know is because my grandfather was a shaman, so how does some random kid like you know about that?"
+
+    l "And on top of that, whats up with that weird spiritual pressure around you too? It's like twice as strong when compared to a normal person!"
+
+    "Reaper" "COME FORTH, YOU SINNER. ACCEPT YOUR JUDGEMENT."
+
+    mc "Can we continue this later? I really don't wanna waste any more time letting that... thing get any closer to us." 
+
+    l "Fine, but don't think that this conversation is over with."
+
+    n "The two of them continue to run."
+
+    mc "S**t. It's midnight."
+
+    l "YOU'VE GOT TWO OF THEM AFTER YOU ALREADY? WHAT ARE YOU EVEN DOING?"
+
+    mc "Lets brush past that for now, lets just focus on getting to safety."
+
+    n "The two of them quickly arrive on mc's street."
+
+    #Reaper at both ends of street.
+
+    mc "Sh*t. "
+
+    l "Well then."
+
+    mc "spirit, what should we do?"
+
+    g "Well, I guess there was that trump card, but are you absolutely sure that you want to use it?"
+
+    mc "What other choice do we have?"
+
+    g "Alright then, just don't say I didn't warn you."
+
+    #SpiritFlame cg
+
+    l "WHAT ARE YOU DOING!?"
+
+    g "This is a power bestowed upon you by me."
+
+    g "I believe that the previous user of this power named it \"Spirit flame\". Pretty dull name, but I suppose that it gets the job done."
+
+    g "Now, use it to repel the reapers!"
+
+    n "mc waves his hands out in the direction of the reapers, and upon doing so, a wall of blue flames arise from the floor, surrounding the reapers."
+
+    mc "Quick, lets get inside while they're trapped!"
+
+    l "And then, you'll explain everything to me, right?"
+
+    mc "Ehhh..."
+
+    l "You'd better."
+
+    n "The two of them enter mc's house."
+
+    screen bg black 
+
+    "Lumpkinn" "This marks the end of chapter 1."
+
+    "Lumpkinn" "I was planning on maybe extending it, but I want to play it safe, and cut it off a little early."
+
+    "Lumpkinn" "I still have tons of ideas though, so i'll definetly be revisiting this little project in future weeks!"
+
+    "Lumpkinn" "For now, ta ta!"
+    
+    n "Save chapter 1 clear data?"
+    # add in save prompt here.
+
+    with fade
     return
