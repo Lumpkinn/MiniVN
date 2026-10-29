@@ -51,7 +51,7 @@ label start:
 
     mc "11:30. That was the time that I get back from my tutoring session at Mrs. Pertholder's house."
     mc "It had just started to drizzle, and the moon was full, and shining its dull light over the streets."
-    mc "It was getting worringly close to exam season, so my parents thought that it'd be a good idea to get some tutoring."
+    mc "It was getting worryingly close to exam season, so my parents thought that it'd be a good idea to get some tutoring."
     mc "Mrs. Pertholder was a good family friend of ours too, so she agreed to take care of it to sooth my parent's feelings about my exams."
 
     scene bg LivingroomNight
@@ -59,7 +59,7 @@ label start:
     #TODO: Might be a good addition to add in some stock images to fade in that relate to what MC is talking about 
     mc "Typically, as soon as I walked through the door, I'd be saddled with countless chores to take care of, varying from taking care of the dishes, and doing some laundry"
     #add in second image here
-    mc "To cooking dinner, and doing some maintence on Dad's car."
+    mc "To cooking dinner, and doing some maintenance on Dad's car."
 
     mc "It was a nice change of pace."
 
@@ -85,22 +85,22 @@ label start:
 
     "???" "AAAAAAAaaaaa......"
 
-    mc "Alright, that definetly did not come from the side of the house... I should probably still check up on whatever that was though."
+    mc "Alright, that definitely did not come from the side of the house... I should probably still check up on whatever that was though."
 
     #TODO:Make choice to either head back, or keep going. both choices result in him going deeper.
 
 
 
-    mc "alright, lets go take a look then... \n It's not like i'd be able to get sleep if I ignore this..."
+    mc "alright, lets go take a look then... It's not like I'd be able to get sleep if I ignore this..."
 
     scene bg cemetetary
     with fade
 
-    n "As mc continues to follow the noise, he eventually arrives at the local cemetetary."
+    n "As mc continues to follow the noise, he eventually arrives at the local graveyard."
 
     mc "Yeah no. I'm not doing this."
 
-    mc "There is no way that i'm ever going to go into that old, unsettling graveyard at god-knows what time at night."
+    mc "There is no way that I'm ever going to go into that old, unsettling graveyard at god-knows what time at night."
 
     "???" "Well, its a good thing you won't have to ~"
 
@@ -132,7 +132,7 @@ label start:
     mc" You know what? screw this, I'm going to bed"
 
     scene bg bedroomNight with fade
-    mc "Maybe I'll be able to make sense of this tommorow morning."    
+    mc "Maybe I'll be able to make sense of this tomorrow morning."    
     scene bg black with fade
     n"End of day one."
     
@@ -153,7 +153,7 @@ label start:
 
     #cg of him brushing his teeth
 
-    mc "hmm hm hm hmmm"
+    mc "hmm, hm, hm, hmmm"
 
     #cg if him making breakfast
 
@@ -199,7 +199,7 @@ label start:
 
     mc "A spirit?"
 
-    g "Yes, you buffon! a spirit, a ghost, a poltergeist, or whatever you mortals call us now!"
+    g "Yes, you buffoon! a spirit, a ghost, a poltergeist, or whatever you mortals call us now!"
 
     #confused
     mc "Okayyyy? And this concerns me how???"
@@ -210,7 +210,7 @@ label start:
 
     mc "First off, when you say that you were in trouble yesterday, are you talking about that large figure that I was running away from yesterday?"
 
-    g "Yes, I am reffering to that. You were also extraordinarily undignified while doing so."
+    g "Yes, I am referring to that. You were also extraordinarily undignified while doing so."
 
     mc "What was that thing anyways?"
 
@@ -243,7 +243,7 @@ label start:
 
     g "I'm looking for an old pendant of mine."
     
-    g "Legends say that once a spirit has gained its most prized possesion, It is allowed to continue roaming around the earth, and choose to swap between the afterlife and the mortal plane whenever they wish."
+    g "Legends say that once a spirit has gained its most prized possession, It is allowed to continue roaming around the earth, and choose to swap between the afterlife and the mortal plane whenever they wish."
     
     g "Now, don't you have something to be doing?"
 
@@ -284,7 +284,7 @@ label start:
             "Not quite..."
     "Mrs. Pertholder" "Alright, now we'll do a bit of English."
     "Mrs. Pertholder" "The words affect and effect are often confused with one another. If you want to easily know which one to use, all you need to know is what type of speech each word is."
-    "Mrs. Pertholder" "Effect is a noun tha is used to show when something happens, while affect is a verb that is used to show how something had something else done to it. "
+    "Mrs. Pertholder" "Effect is a noun that is used to show when something happens, while affect is a verb that is used to show how something had something else done to it. "
     "Mrs. Pertholder" "So, what word fits in the blank: Construction will _____ traffic in the area."
     menu: 
         "It's Effect!":
@@ -321,7 +321,7 @@ label start:
 
     g "Pardon me if I'm wrong here, but isn't it supposed to be the other way around?"
 
-    mc "Nah, you hit the nail on the head. The only reason why I'm an abnormality is because my parents decided to spend their highschool years doing nothing, and get minimum wage jobs as soon as they dropped out."
+    mc "Nah, you hit the nail on the head. The only reason why I'm an abnormality is because my parents decided to spend their high school years doing nothing, and get minimum wage jobs as soon as they dropped out."
 
     mc "After that, they had the ABSOLUTELY WONDERFUL idea of adopting some kid and forcing him to be their glorified slave."
 
@@ -333,7 +333,7 @@ label start:
 
     mc "f**k you."
 
-    g"That makes four times that i've heard you curse now. Any more, and i'll have to get you a swear jar~"
+    g"That makes four times that I've heard you curse now. Any more, and I'll have to get you a swear jar~"
 
     scene bg street with fade
 
@@ -381,7 +381,7 @@ label start:
 
     n"She points over to some boxes on the curb."
 
-    l "And our house is right across the street from there. Sorry about it being kinda inconvient, it was a mistake on the mover's part."
+    l "And our house is right across the street from there. Sorry about it being kinda inconvenient, it was a mistake on the mover's part."
 
     mc "It's fine, a bit of extra work never hurt anyone."
 
@@ -405,7 +405,7 @@ label start:
 
     g "You need to get home NOW."
 
-    mc "What's this about? You yourself said that my life was stupid boring, and now here you are, raining on the first semi-interesting thing thats happened today."
+    mc "What's this about? You yourself said that my life was stupid boring, and now here you are, raining on the first semi-interesting thing that's happened today."
 
     g "That's not why you need to head home, you dunce!"
 
@@ -413,11 +413,11 @@ label start:
 
     mc "And? I easily outran them the first time I had to deal with them."
 
-    g "That was because I was still settling into your body! Now that I've been here for a whole day, they're going to be much more agressive!"
+    g "That was because I was still settling into your body! Now that I've been here for a whole day, they're going to be much more aggressive!"
 
-    mc "Stop fearmongering. Everything is gonna be fine."
+    mc "Stop fear mongering. Everything is gonna be fine."
 
-    mc "This is the first good thing to happen to me in a while, and i'm not gonna let some stupid paranoid ghoul ruin it for me!"
+    mc "This is the first good thing to happen to me in a while, and I'm not gonna let some stupid paranoid ghoul ruin it for me!"
 
     g "Please... Just listen to me. Just this once, mc."
 
@@ -439,7 +439,7 @@ label start:
 
     mc "Yeah, I actually go to the school up the street from here. "
 
-    mc "Its exam season right now, so I've beem studying nonstop actually"
+    mc "Its exam season right now, so I've been studying nonstop actually"
 
     "Lynne's Father" "Oh, sorry for taking you away from your studies then."
 
@@ -467,7 +467,7 @@ label start:
 
     mc "It's fine, I made sure to send them a quick text not long after I started helping the rest of you."
 
-    "Lynne's Father" "Your parents were ok with it?"
+    "Lynne's Father" "Your parents were okay with it?"
 
     mc "Yeah. They're usually pretty hands off."
 
@@ -509,11 +509,11 @@ label start:
 
     mc "I didn't ask for any of this, and here you are acting like you have any right to impose upon the way that I live my life. So, I think that I'm justified for wanting to set some boundaries."
     
-    mc "First off, you don't have any juristdiction over how I'm going to live my life."
+    mc "First off, you don't have any jurisdiction over how I'm going to live my life."
 
     #reaper in distance
 
-    mc "Second, you will refrain from talking to me while i'm around other people. I can't afford to look schitzophrenic. "
+    mc "Second, you will refrain from talking to me while I'm around other people. I can't afford to look schizophrenic. "
     
     #reaper gets closer
 
@@ -557,7 +557,7 @@ label start:
 
     l "I JUST GOTTA GIVE YOU SOME OF THE LEFTOVERS!"
 
-    g "Oh my lord. its going to get infinetly worse now."
+    g "Oh my lord. its going to get infinitely worse now."
 
     mc "What do you mean by that?"
 
@@ -605,7 +605,7 @@ label start:
 
     l "And on top of that, whats up with that weird spiritual pressure around you too? It's like twice as strong when compared to a normal person!"
 
-    "Reaper" "COME FORTH, YOU SINNER. ACCEPT YOUR JUDGEMENT."
+    "Reaper" "COME FORTH, YOU SINNER. ACCEPT YOUR JUDGMENT."
 
     mc "Can we continue this later? I really don't wanna waste any more time letting that... thing get any closer to us." 
 
@@ -663,7 +663,7 @@ label start:
 
     "Lumpkinn" "I was planning on maybe extending it, but I want to play it safe, and cut it off a little early."
 
-    "Lumpkinn" "I still have tons of ideas though, so i'll definetly be revisiting this little project in future weeks!"
+    "Lumpkinn" "I still have tons of ideas though, so I'll definitely be revisiting this little project in future weeks!"
 
     "Lumpkinn" "For now, ta ta!"
     
