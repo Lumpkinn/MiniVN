@@ -8,18 +8,22 @@
 
 #if you ever wanna try out that tales thing, feel free to use this! https://www.renpy.org/doc/html/quickstart.html#positions
 
-score = 0
+default score = 0
+
 #you can change font color of text here using "color=#<Color in hex here>"
 define e = Character("Eileen")
 #prospective names: Ashton, 
 define mc = Character("MC", color="#e74e4eff")
 
-define g = Character("Spirit", color="#8f8585c4")
+define g = Character("Spirit", color="#8f8585c4", what_color="#8f8585c4")
 
-define l = Character("Lynne" color="#ffee00ff")
+define l = Character("Lynne", color="#ffee00ff")
 
-define n = Character("Narrator", color="#508f20")
+define n = Character("Narrator", who_color="#508f20", what_color="#508f20")
 # The game starts here.
+
+#Mc name here (IDRK what it should be tbh)
+default Mc = "NAME PENDING"
 
 label start:
 
@@ -41,7 +45,7 @@ label start:
 
     # These display lines of dialogue.
     scene black
-    e "Welcome to my little VN!"
+    e "{color="#db2a2a"}"Welcome to my little VN!"{/color}"
 
     e "This is my first time adventuring out into this kinda stuff, so sorry if it doesn't meet your expectations :/"
 
@@ -72,12 +76,12 @@ label start:
     mc "What was that!?"
 
     scene bg LivingroomNight
-    with fade
+    
     mc "Sounds like it came from the side of the house, I should go make sure that there's nothing weird going on!"
 
     scene bg entrywayNight
     with fade
-    n "MC rushes out, only stopping to grab a umbrella on the off-chance that the rain started to pick up."
+    n "[Mc] rushes out, only stopping to grab a umbrella on the off-chance that the rain started to pick up."
 
     mc "Alright, let's go check out the side of the house."
 
@@ -89,14 +93,17 @@ label start:
 
     #TODO:Make choice to either head back, or keep going. both choices result in him going deeper.
 
-
-
-    mc "alright, lets go take a look then... It's not like I'd be able to get sleep if I ignore this..."
-
+    menu:
+        "Go check it out?"
+        "Yes":
+            mc "alright, lets go take a look then... It's not like I'd be able to get sleep if I ignore this..."
+        "No":
+            mc "I probably should check it out though, I don't think i'd be able to sleep soundly if i just left someone hurting cause I didn't feel like checking it out."
+    
     scene bg cemetetary
     with fade
 
-    n "As mc continues to follow the noise, he eventually arrives at the local graveyard."
+    n "As [Mc] continues to follow the noise, he eventually arrives at the local graveyard."
 
     mc "Yeah no. I'm not doing this."
 
@@ -106,12 +113,12 @@ label start:
 
     mc "HUH??? WHAT WAS THAT???"
 
-    n "A cold chill envelops mc's body, reaching all the way down to the bone."
+    n "A cold chill envelops [Mc]'s body, reaching all the way down to the bone."
 
-    mc "SCREW THIS"
+    mc "SCREW THIS! I'M NOT GONNA ENTERTAIN THIS ANY MORE!"
     scene bg middletown
     with fade
-    n "mc makes a mad dash back towards his house, however..."
+    n "[Mc] makes a mad dash back towards his house, however..."
 
     #make reaper sprite show up in the middle of the screen
 
@@ -121,17 +128,18 @@ label start:
 
     mc "OUT OF THE WAY!"
     with hpunch
+    
     #play punch sfx, and slide reaper off screen
 
-    n "mc continues to make a mad dash for his house."
+    n "[Mc] continues to make a mad dash for his house."
 
 
     scene  bg entrywayNight with fade
     mc"*pant* *pant* *pant*"
-    mc"WHat was that???"
+    mc "WHat was that???"
     mc" You know what? screw this, I'm going to bed"
 
-    scene bg bedroomNight with fade
+    scene bg bedroom with fade
     mc "Maybe I'll be able to make sense of this tomorrow morning."    
     scene bg black with fade
     n"End of day one."
@@ -141,7 +149,7 @@ label start:
 
     n"Start of day 2."
 
-    scene bg bedroomDay 
+    scene bg bedroom 
     mc "Yawwwwn"
     n "He rubs his eyes."
     #TODO: maybe add sprite of MC yawning?
@@ -183,7 +191,7 @@ label start:
     #TODO: these are the MC's thoughts. make sure to make them a different color to indicate that
     mc "I still have no idea whats going on in the slightest..."
 
-    mc "I guess this means that last night wasn't a dream either..."
+    mc "{color="#919090"}I guess this means that last night wasn't a dream either...{/color}"
 
     "???" "HEY! ARE YOU LISTENING TO ME AT ALL? Dumb mortals, not even able to do something as simple as pay attention to others when they're being spoken to."
 
@@ -247,8 +255,8 @@ label start:
     
     g "Now, don't you have something to be doing?"
 
-    scene tableDay
-    n "With a snap, MC is returned back to the waking world, and after gaining his bearings, glances at the clock over at the corner"
+    scene DiningTable
+    n "With a snap, [Mc] is returned back to the waking world, and after gaining his bearings, glances at the clock over at the corner."
 
     mc "Crud, I'm gonna be late!"
 
@@ -261,7 +269,7 @@ label start:
     #this is a thought, mark that out 
     mc "Thank goodness I made it on time!"
 
-    n "After that close call, mc managed to make it through the rest of the day no problem."
+    n "After that close call, [Mc] managed to make it through the rest of the day no problem."
     n "He mostly focused on reviewing for his exams, but he did manage to spend some time with his friends during lunch."
     n "Naturally, he hadn't mentioned what had happened that morning to anyone, out of fear of becoming a social pariah, or just outright being insane."
 
@@ -277,7 +285,7 @@ label start:
     menu:
         "The factors are (x + 4) and (x - 1)":
             "That's correct!"
-            score = score + 1
+            #score = score + 1
         "The factors are (x - 4) and (x + 1)":
             "Not quite..."
         "The factors are (x - 2) and (x + 1)":
@@ -303,7 +311,7 @@ label start:
             "Not quite..."
         "!(a || b) != (a & b)":
             "Not quite..."
-    n "At this point, it was starting to get rather late, and mc decided that it'd be a good time to start heading home."
+    n "At this point, it was starting to get rather late, and [Mc] decided that it'd be a good time to start heading home."
 
     g "Your life is pretty boring now that I've experienced it first hand."
 
@@ -337,7 +345,7 @@ label start:
 
     scene bg street with fade
 
-    n "The two (or rather one?) arrive at a street not too far from Mc's house"
+    n "The two (or rather one?) arrive at a street not too far from [Mc]'s house"
     
     
     "???" "HEY! YOU THERE!"
@@ -355,7 +363,7 @@ label start:
     #shock
     g"She cut me off."
 
-    mc "Mc walks up to the booth"
+    n "[mc] walks up to the curb, where the girl is waiting."
 
     "???" "Hey, thanks for coming over!"
 
@@ -385,7 +393,7 @@ label start:
 
     mc "It's fine, a bit of extra work never hurt anyone."
 
-    n "For the next 30 minutes, Lynne, Mc, and Lynne's parents helped move the boxes across the street, and into their house."
+    n "For the next 30 minutes, Lynne, [Mc], and Lynne's parents helped move the boxes across the street, and into their house."
 
     mc "I think that's the last of it."
 
@@ -419,11 +427,11 @@ label start:
 
     mc "This is the first good thing to happen to me in a while, and I'm not gonna let some stupid paranoid ghoul ruin it for me!"
 
-    g "Please... Just listen to me. Just this once, mc."
+    g "Please... Just listen to me. Just this once, [Mc]."
 
     mc "I am not going to repeat myself. I am going to enjoy eating dinner with Lynne's family before I head home, and that's final."
 
-    n "mc turns off the water, and dries his hands."
+    n "[Mc] turns off the water, and dries his hands."
 
     mc "AND FOR THE FINAL TIME, STOP BOTHERING ME WHILE I'M AROUND OTHER PEOPLE!"
     #sadge
@@ -491,7 +499,7 @@ label start:
 
     mc "Alright then, I'll head out. If you need any more help, just let me know!"
 
-    n "MC heads out, and starts on his way home."
+    n "[Mc] heads out, and starts on his way home."
 
     g "God, we are so screwed. What time is it anyways?"
 
@@ -527,7 +535,7 @@ label start:
 
     # running sfx
 
-    scene bg closerStreet #slide this one into the screen
+    scene bg middletown #slide this one into the screen
 
     #how should I indicate the fact that theyre currently running?
 
@@ -571,7 +579,7 @@ label start:
 
     g "Sounds like a plan."
 
-    n "mc starts to slow down, and after a few seconds, comes to a complete stop, not daring to start walking backwards and losing more time."
+    n "[Mc] starts to slow down, and after a few seconds, comes to a complete stop, not daring to start walking backwards and losing more time."
 
     n "After a few seconds, Lynne catches up to him."
 
@@ -579,7 +587,7 @@ label start:
 
     l "God, you're fast. Anyways, my folks wanted to give you some of the leftovers from the food."
 
-    n "Lynne hands mc a small plastic bag, with some tupperware containers inside of it."
+    n "Lynne hands [Mc] a small plastic bag, with some tupperware containers inside of it."
 
     mc "Thanks! I do have to get going now, so see y-"
 
@@ -619,7 +627,7 @@ label start:
 
     mc "Lets brush past that for now, lets just focus on getting to safety."
 
-    n "The two of them quickly arrive on mc's street."
+    n "The two of them quickly arrive on [Mc]'s street."
 
     #Reaper at both ends of street.
 
@@ -645,7 +653,7 @@ label start:
 
     g "Now, use it to repel the reapers!"
 
-    n "mc waves his hands out in the direction of the reapers, and upon doing so, a wall of blue flames arise from the floor, surrounding the reapers."
+    n "[Mc] waves his hands out in the direction of the reapers, and upon doing so, a wall of blue flames arise from the floor, surrounding the reapers."
 
     mc "Quick, lets get inside while they're trapped!"
 
@@ -655,9 +663,9 @@ label start:
 
     l "You'd better."
 
-    n "The two of them enter mc's house."
+    n "The two of them enter [Mc]'s house."
 
-    screen bg black 
+    scene bg black 
 
     "Lumpkinn" "This marks the end of chapter 1."
 
