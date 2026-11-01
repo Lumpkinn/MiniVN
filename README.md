@@ -1,5 +1,3 @@
-# markdown heading
-
 <h1>MiniVN</h1>
 This is a small visual novel made fore hack club's terra!
 The project in itself was mostly inspired by the season and all, since its basically spooky season already.
