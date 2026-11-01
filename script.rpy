@@ -1,4 +1,4 @@
-﻿#TODO: REPLACE ALL INSTANCES OF MC WITH THE CHARACTER'S NAME!!!!
+﻿#TODO: SCALE EVERYTHING!!!!!
 
 # The script of the game goes in this file.
 
@@ -9,26 +9,32 @@
 #if you ever wanna try out that tales thing, feel free to use this! https://www.renpy.org/doc/html/quickstart.html#positions
 
 default score = 0
-
-#you can change font color of text here using "color=#<Color in hex here>"
-define e = Character("Eileen")
 #prospective names: Ashton, 
-define mc = Character("MC", color="#e74e4eff", image="neutralmc")
+define mc = Character("Asbel", color="#e74e4eff", image="mainchar")
+image mainchar neutral = "images/NeutralMC.png"
+image mainchar confused = "images/MCConfused.png"
+image mainchar scared = "images/MCScared.png" 
+image mainchar shocked = "images/MCShocked.png"
 
-#image neutralmc confused = "images/MCConfused.png"
-#image neutralmc scared = "" 
-#image neutralmc shocked = ""
-#image neutralmc surprised = "images/MCSurprised.png"
 
-define g = Character("Spirit", color="#8f8585c4", what_color="#8f8585c4", image="spiritneutral")
-#image spiritneutral 
-define l = Character("Lynne", color="#d95763", image="lynnneutral")
+define g = Character("Connie", color="#8f8585c4", what_color="#8f8585c4", image="spirit")
+image spirit blank = "images/Spirit_Sprite.png"
+image spirit neutral = "images/SpiritNeutral.png"
+image spirit confused = "images/SpiritConfused.png"
+image spirit scared = "images/SpiritScared.png"
+image spirit shocked = "images/SpiritShocked.png"
+
+define l = Character("Lynne", color="#d95763", image="lynn")
+image lynn neutral = "images/LynnNeutral.png"
+image lynn confused = "images/LynnConfused.png"
+image lynn scared = "images/LynneScared.png"
+image lynn shocked = "images/LynnShocked.png"
 
 define n = Character("Narrator", who_color="#508f20", what_color="#508f20")
 # The game starts here.
 
 #Mc name here (IDRK what it should be tbh)
-default Mc = "NAME PENDING"
+default Mc = "Asbel"
 
 label start:
 
@@ -62,41 +68,43 @@ label start:
     #add in second image here
     mc "To cooking dinner, and doing some maintenance on Dad's car."
 
-    mc "It was a nice change of pace."
+    show mainchar
+
+    mc neutral "It was a nice change of pace."
 
     scene bg fridgenight
     with fade
-    show neutralmc
-    mc "Hmm, what should I get to eat? I'm still pretty hungry since I wasn't able to eat all too much while I was at Mrs. Pertholder's."
+    
+    mc neutral "Hmm, what should I get to eat? I'm still pretty hungry since I wasn't able to eat all too much while I was at Mrs. Pertholder's."
     
     with hpunch
-    show mcshocked
-    mc "What was that!?"
+    
+    mc shocked "What was that!?"
 
     scene bg livingroomnight
-    show neutralmc
-    mc "Sounds like it came from the side of the house, I should go make sure that there's nothing weird going on!"
+    
+    mc neutral "Sounds like it came from the side of the house, I should go make sure that there's nothing weird going on!"
 
     scene bg entrywaynight
     with fade
     n "[Mc] rushes out, only stopping to grab a umbrella on the off-chance that the rain started to pick up."
-
-    mc "Alright, let's go check out the side of the house."
+    show mainchar
+    mc neutral "Alright, let's go check out the side of the house."
 
     n "A loud shriek pierces the soft tranquility of the night."
 
     "???" "AAAAAAAaaaaa......"
-    show mcscared 
-    mc "Alright, that definitely did not come from the side of the house... I should probably still check up on whatever that was though."
+     
+    mc shocked "Alright, that definitely did not come from the side of the house... I should probably still check up on whatever that was though."
 
     #TODO:Make choice to either head back, or keep going. both choices result in him going deeper.
 
     menu:
         "Go check it out?"
         "Yes":
-            mc "alright, lets go take a look then... It's not like I'd be able to get sleep if I ignore this..."
+            mc neutral "alright, lets go take a look then... It's not like I'd be able to get sleep if I ignore this..."
         "No":
-            mc "I probably should check it out though, I don't think i'd be able to sleep soundly if i just left someone hurting cause I didn't feel like checking it out."
+            mc neutral "I probably should check it out though, I don't think i'd be able to sleep soundly if i just left someone hurting cause I didn't feel like checking it out."
     
     scene bg cemetetary
     with fade
@@ -104,35 +112,31 @@ label start:
     n "As [Mc] continues to follow the noise, he eventually arrives at the local graveyard."
 
 
-    show neutralmc
+    mc scared "Yeah no. I'm not doing this."
 
-    mc "Yeah no. I'm not doing this."
-
-    mc "There is no way that I'm ever going to go into that old, unsettling graveyard at god-knows what time at night."
+    mc scared"There is no way that I'm ever going to go into that old, unsettling graveyard at god-knows what time at night."
 
     show spirit_sprite
     "???" "Well, its a good thing you won't have to ~"
 
-    show mcshocked 
+    
 
-    mc "HUH??? WHAT WAS THAT???"
+    mc scared "HUH??? WHAT WAS THAT???"
 
     n "A cold chill envelops [Mc]'s body, reaching all the way down to the bone."
-    
-    show mcscared
 
-    mc "SCREW THIS! I'M NOT GONNA ENTERTAIN THIS ANY MORE!"
+    mc shocked "SCREW THIS! I'M NOT GONNA ENTERTAIN THIS ANY MORE!"
     scene bg middletown
     with fade
     n "[Mc] makes a mad dash back towards his house, however..."
 
     #make reaper sprite show up in the middle of the screen
 
-    mc "WHAT THE F*** IS THAT?????"
+    mc shocked "WHAT THE F*** IS THAT?????"
 
     "???" "I beckon thee, join me in the world that comes afte-"
 
-    mc "OUT OF THE WAY!"
+    mc scared "OUT OF THE WAY!"
     with hpunch
     
     #play punch sfx, and slide reaper off screen
@@ -141,15 +145,14 @@ label start:
 
 
     scene  bg entrywanNight with fade
-    
-    show mcscared
+    show mainchar
 
-    mc"*pant* *pant* *pant*"
-    mc "WHat was that???"
-    mc" You know what? screw this, I'm going to bed"
+    mc shocked "*pant* *pant* *pant*"
+    mc shocked "WHat was that???"
+    mc shocked "You know what? screw this, I'm going to bed"
 
     scene bg bedroom with fade
-    mc "Maybe I'll be able to make sense of this tomorrow morning."    
+    mc neutral "Maybe I'll be able to make sense of this tomorrow morning."    
     scene black with fade
     n"End of day one."
     
@@ -158,142 +161,149 @@ label start:
         "Yes.":
             $ renpy.run(ShowMenu("save"))
         "No.":
-            return()
+            n "Alright, suit yourself..."
     #add save prompt
 
     n"Start of day 2."
 
     scene bg bedroom
 
-    show neutralmc
+    show mainchar
+    mc neutral "Yawwwwn"
 
-    mc "Yawwwwn"
     n "He rubs his eyes."
-    #TODO: maybe add sprite of MC yawning?
-    mc "Man, that was a stupid weird dream I had."
     
-    mc "But lets disregard that for now, I gotta start getting ready for school!"
+    #TODO: maybe add sprite of MC yawning?
+    
+    mc neutral "Man, that was a stupid weird dream I had."
+    
+    mc neutral "But lets disregard that for now, I gotta start getting ready for school!"
 
     n "He gets up, and starts getting ready."
 
     #cg of him brushing his teeth
 
-    mc "hmm, hm, hm, hmmm"
+    mc neutral "hmm, hm, hm, hmmm"
 
     #cg if him making breakfast
 
     #cg of him sitting down to eat
-    mc "Alright, time to dig in!"
-
-    "???" "That looks pretty good if I do say so myself~"
-
-    mc "Huh?"
+    mc neutral "Alright, time to dig in!"
 
     show spirit_sprite
+    "???" "That looks pretty good if I do say so myself~"
+    show mainchar
+    mc shocked "Huh?"
 
+    show spirit_sprite
     "???" "Oh, don't you dare \"huh\" me!"
-
+    
+    show spirit_sprite
     "???" "And besides, its a little rude to not look at someone whenever they're talking, isn't it?"
+    
     scene mindscape with pixellate
 
-    mc "What?"
+    show mainchar
+    mc scared "What?"
 
-    show mcshocked
-
-    mc "WHAT THE H*** IS GOING ON???"
+    mc shocked "WHAT THE H*** IS GOING ON???"
     show spiritneutral 
     "???" "You're rather foul-mouthed, aren't you? I've barely known you for even a day, and I've already heard you curse three times~"
-
+    show spiritneutral
     "???" "Doesn't really fit your whole \"wholesome guy\" persona all too well, does it?"
 
     #TODO: maybe implement a sprite of MC sighing?
 
 
     #TODO: these are the MC's thoughts. make sure to make them a different color to indicate that
-    mc "{color="#919090"} I still have no idea whats going on in the slightest...{/color}"
+    show mainchar
+    mc neutral "{color="#919090"} I still have no idea whats going on in the slightest...{/color}"
+    mc neutral "{color="#919090"} I guess this means that last night wasn't a dream either...{/color}"
 
-    mc "{color="#919090"} I guess this means that last night wasn't a dream either...{/color}"
-
+    show spiritshocked
     "???" "HEY! ARE YOU LISTENING TO ME AT ALL? Dumb mortals, not even able to do something as simple as pay attention to others when they're being spoken to."
-
-    mc "Alright you.. whatever you are. What are you exactly, and what am I doing here?"
-
+    
+    show mainchar
+    mc neutral "Alright you.. whatever you are. What are you exactly, and what am I doing here?"
+    
+    show spiritneutral
     "???" "How rude! You can't even bother to refer to me by my name!"
     #MC deadpan
-    mc "Well, its not like I know it or anything...."
+    
+    show mainchar
+    mc neutral "Well, its not like I know it or anything...."
 
+    show spiritneutral
     "???" "Well, in that case, I might was well introduce myself. Consider it an honor, since you are nothing more than a lowly mortal."
     
-    "???" "I am _____, and I am what you mortals might refer to as a spirit."
-
+    "???" "I am Connie, and I am what you mortals might refer to as a spirit."
+    show mainchar
     mc "A spirit?"
+    show spirit
+    g neutral "Yes, you buffoon! a spirit, a ghost, a poltergeist, or whatever you mortals call us now!"    
+    show mainchar
+    mc neutral "Okayyyy? And this concerns me how???"
 
-    g "Yes, you buffoon! a spirit, a ghost, a poltergeist, or whatever you mortals call us now!"
+    g neutral "Well, I was in a hint of trouble yesteryear, and you happened to show up at an opportune time for me to... cohabitate with you."
+    show mainchar
+    mc neutral "Alright, I have two questions."
+    show mainchar
+    mc neutral "First off, when you say that you were in trouble yesterday, are you talking about that large figure that I was running away from yesterday?"
 
-    show mcconfused
-    mc "Okayyyy? And this concerns me how???"
+    g neutral "Yes, I am referring to that. You were also extraordinarily undignified while doing so."
+    show mainchar
+    mc neutral "What was that thing anyways?"
 
-    g "Well, I was in a hint of trouble yesteryear, and you happened to show up at an opportune time for me to... cohabitate with you."
+    g neutral "Us spirits refer to them as \"Reapers\". They are tasked with rounding up wayward souls in any way possible."
 
-    mc "Alright, I have two questions."
+    g neutral "The one that was after you yesterday was attempting to reclaim my soul. "
+    show mainchar
+    mc neutral "And secondly, what exactly do you mean by \"Cohabitate\"?"
+    show spirit
+    g neutral "I mean that we're currently sharing a body, you dunce!"
 
-    mc "First off, when you say that you were in trouble yesterday, are you talking about that large figure that I was running away from yesterday?"
-
-    g "Yes, I am referring to that. You were also extraordinarily undignified while doing so."
-
-    mc "What was that thing anyways?"
-
-    g "Us spirits refer to them as \"Reapers\". They are tasked with rounding up wayward souls in any way possible."
-
-    g "The one that was after you yesterday was attempting to reclaim my soul. "
-
-    mc "And secondly, what exactly do you mean by \"Cohabitate\"?"
-
-    g "I mean that we're currently sharing a body, you dunce!"
-
-    g "And now that I'm \"Cohabiting\" with you, It'll need to kill you to get to me."
+    g neutral "And now that I'm \"Cohabiting\" with you, It'll need to kill you to get to me."
     
-    show mcshocked
     with vpunch
-    mc "AND WHAT MADE YOU THINK THAT I'D AGREE WITH THAT!!!"
+    show mainchar
+    mc shocked "AND WHAT MADE YOU THINK THAT I'D AGREE WITH THAT!!!"
     
+    show spirit
+    g neutral "Oh calm down! I'm not cruel enough to act out for no reason, or get you killed!"
 
-    g "Oh calm down! I'm not cruel enough to act out for no reason, or get you killed!"
+    g neutral "And I promise not to, on one condition."
 
-    g "And I promise not to, on one condition."
+    show mainchar
+    mc neutral "What is it?"
 
-    show neutralmc 
+    g neutral "You help me regain something of mine."
+    show mainchar
+    mc neutral "What exactly do you want me to find for you?"
 
-    mc "What is it?"
+    g neutral "Good lord. Are all you mortals this annoying? "
 
-    show spiritneutral 
-    g "You help me regain something of mine."
-
-    mc "What exactly do you want me to find for you?"
-
-    g "Good lord. Are all you mortals this annoying? "
-
-    g "I'm looking for an old pendant of mine."
+    g  neutral "I'm looking for an old pendant of mine."
     
-    g "Legends say that once a spirit has gained its most prized possession, It is allowed to continue roaming around the earth, and choose to swap between the afterlife and the mortal plane whenever they wish."
+    g neutral "Legends say that once a spirit has gained its most prized possession, It is allowed to continue roaming around the earth, and choose to swap between the afterlife and the mortal plane whenever they wish."
     
-    g "Now, don't you have something to be doing?"
+    g neutral "Now, don't you have something to be doing?"
 
     scene diningtable
     n "With a snap, [Mc] is returned back to the waking world, and after gaining his bearings, glances at the clock over at the corner."
 
-    show mcscared  
-
-    mc "Crud, I'm gonna be late!"
+    show mainchar
+    mc neutral "Crud, I'm gonna be late!"
 
     n "He then subsequently bolts out the door."
 
     scene schoolentry with fade
-    mc "Can't afford to dawdle, it looks like class starts in 2 minutes!"
+    show mainchar
+    mc scared "Can't afford to dawdle, it looks like class starts in 2 minutes!"
 
     scene classroom with fade
     #this is a thought, mark that out 
-    mc "Thank goodness I made it on time!"
+    show mainchar
+    mc neutral"{color="#919090"}Thank goodness I made it on time!{/color}"
 
     n "After that close call, [Mc] managed to make it through the rest of the day no problem."
     n "He mostly focused on reviewing for his exams, but he did manage to spend some time with his friends during lunch."
@@ -303,6 +313,7 @@ label start:
 
     n "After a few hours of studying, they decided to do one last quick review."
     #quiz time!
+    show extraneutral
     "Mrs. Pertholder" "Alright, so let's do one last quick review before we call it for tonight."
     "Mrs. Pertholder" "We'll begin with some simple stuff first."
     "Mrs. Pertholder" "We'll do a simple factoring question first."
@@ -310,12 +321,16 @@ label start:
     "Mrs. Pertholder" "So, what are the factors of the expression x^2 + -3x + 4?"
     menu:
         "The factors are (x + 4) and (x - 1)":
+            show extraneutral
             "That's correct!"
             #score = score + 1
         "The factors are (x - 4) and (x + 1)":
+            show extraconfused
             "Not quite..."
         "The factors are (x - 2) and (x + 1)":
             "Not quite..."
+            show extraconfused
+    show extraneutral
     "Mrs. Pertholder" "Alright, now we'll do a bit of English."
     "Mrs. Pertholder" "The words affect and effect are often confused with one another. If you want to easily know which one to use, all you need to know is what type of speech each word is."
     "Mrs. Pertholder" "Effect is a noun that is used to show when something happens, while affect is a verb that is used to show how something had something else done to it. "
@@ -323,8 +338,11 @@ label start:
     menu: 
         "It's Effect!":
             "Not quite...."
+            show extraconfused
         "It's Affect!":
             "That's correct!"
+            show extraneutral
+    show extraneutral
     "Mrs. Pertholder" "Alright, lets move on to some logic questions next."
     "Mrs. Pertholder" "De Morgan's Laws are a common logical concept."
     "Mrs. Pertholder" "They are based off the idea of negation."
@@ -332,232 +350,236 @@ label start:
     "Mrs. Pertholder" "Now, which one of these statements is correct?"
     menu:
         "!a & !b = !(a || b)":
+            show extraneutral
             "That's correct!"
         "!a & !b = !(a & b)":
+            show extraconfused
             "Not quite..."
         "!(a || b) != (a & b)":
+            show extraconfused
             "Not quite..."
     n "At this point, it was starting to get rather late, and [Mc] decided that it'd be a good time to start heading home."
+    show spirit
+    g neutral "Your life is pretty boring now that I've experienced it first hand."
 
-    g "Your life is pretty boring now that I've experienced it first hand."
-
-    g "Seriously, how do you mortals put up with this?"
-
-    mc "Well, it isn't all boring... ᵉˢᵖᵉᶜᶦᵃˡˡʸ ʷʰᵉⁿ ᶦ ᵍᵉᵗ ᵐʸ ᵇᵒᵈʸ ʰᶦ⁻ʲᵃᶜᵏᵉᵈ......"
-
+    g neutral "Seriously, how do you mortals put up with this?"
+    show mainchar
+    mc neutral "Well, it isn't all boring... ᵉˢᵖᵉᶜᶦᵃˡˡʸ ʷʰᵉⁿ ᶦ ᵍᵉᵗ ᵐʸ ᵇᵒᵈʸ ʰᶦ⁻ʲᵃᶜᵏᵉᵈ......"
+    show spirit
     g "First off, rude. Secondly, we're in the same body. Anything you try to hide from me, save your thoughts ends up being something that I hear too. So don't bother trying to keep secrets or anything."
+    show mainchar
+    mc neutral "Great. Just great. Now I don't have any privacy either..."
 
-    mc "Great. Just great. Now I don't have any privacy either..."
+    mc neutral "And anyways, it isn't always this boring. I usually do other things."
 
-    mc "And anyways, it isn't always this boring. I usually do other things."
+    mc neutral "I'm just stuck studying all day since my parents are expecting me to take care of them as soon as I graduate and get a job. And since it's exam week, they're not exactly gonna get off my case, are they?"
+    show spirit
+    g neutral "Pardon me if I'm wrong here, but isn't it supposed to be the other way around?"
+    show mainchar
+    mc neutral "Nah, you hit the nail on the head. The only reason why I'm an abnormality is because my parents decided to spend their high school years doing nothing, and get minimum wage jobs as soon as they dropped out."
 
-    mc "I'm just stuck studying all day since my parents are expecting me to take care of them as soon as I graduate and get a job. And since it's exam week, they're not exactly gonna get off my case, are they?"
+    mc neutral "After that, they had the ABSOLUTELY WONDERFUL idea of adopting some kid and forcing him to be their glorified slave."
 
-    g "Pardon me if I'm wrong here, but isn't it supposed to be the other way around?"
-
-    mc "Nah, you hit the nail on the head. The only reason why I'm an abnormality is because my parents decided to spend their high school years doing nothing, and get minimum wage jobs as soon as they dropped out."
-
-    mc "After that, they had the ABSOLUTELY WONDERFUL idea of adopting some kid and forcing him to be their glorified slave."
-
-    mc "Guess which lucky kid they picked."
+    mc neutral "Guess which lucky kid they picked."
 
     #g "lol. lmao even"
-
-    g"man, sucks to be you."
-
-    mc "f**k you."
-
-    g"That makes four times that I've heard you curse now. Any more, and I'll have to get you a swear jar~"
+    show spirit
+    g neutral"man, sucks to be you."
+    show mainchar
+    mc neutral "f**k you."
+    show spirit
+    g neutral "That makes four times that I've heard you curse now. Any more, and I'll have to get you a swear jar~"
 
     scene bg street with fade
 
     n "The two (or rather one?) arrive at a street not too far from [Mc]'s house"
     
-    
+    show lynnneutral    
     "???" "HEY! YOU THERE!"
-
-    mc "Huh?"
-
-    g "God, you're just infatuated with that word, aren't you?"
-
-    mc "Shhhh! I need to act normal!"
-
-    g "You're all such sim-"
-
+    show mainchar
+    mc confused "Huh?"
+    show spirit
+    g neutral "God, you're just infatuated with that word, aren't you?"
+    show mainchar
+    mc neutral "Shhhh! I need to act normal!"
+    show spirit
+    g neutral "You're all such sim-"
+    show lynnneutral
     "???" "YEAH, YOU! DO YOU MIND COMING OVER HERE FOR A SEC!"
 
     #shock
-    g"She cut me off."
+    g neutral"She cut me off."
 
     n "[mc] walks up to the curb, where the girl is waiting."
-
+    show lynnneutral
     "???" "Hey, thanks for coming over!"
 
     "???" "I was wondering if you'd mind if you could help me out with something. "
 
     "???" "My name is Lynne, by the way."
+    show lynn
+    l neutral "Anyways, I wanted to ask if you were willing to help me out with moving some stuff around. I know its kinda late, but my family just arrived."
 
-    l "Anyways, I wanted to ask if you were willing to help me out with moving some stuff around. I know its kinda late, but my family just arrived."
-
-    l "We'd be willing to compensate you, of course!"
-
-    mc "Sure, why not!"
-
-    g "You moron! You can't be staying out this late! The reapers- "
-
-    mc "I SAID shush."
-
-    l "Huh? Did you say something?"
-
-    mc "No, I didn't say anything. Anyways, where's the stuff you need moved?"
-
-    l "Oh, it's right over there."
+    l neutral "We'd be willing to compensate you, of course!"
+    show mainchar
+    mc neutral "Sure, why not!"
+    show spirit
+    g shocked "You moron! You can't be staying out this late! The reapers- "
+    show mainchar
+    mc neutral "I SAID shush."
+    show lynn
+    l neutral "Huh? Did you say something?"
+    show mainchar
+    mc neutral "No, I didn't say anything. Anyways, where's the stuff you need moved?"
+    show lynn
+    l neutral "Oh, it's right over there."
 
     n"She points over to some boxes on the curb."
 
-    l "And our house is right across the street from there. Sorry about it being kinda inconvenient, it was a mistake on the mover's part."
-
-    mc "It's fine, a bit of extra work never hurt anyone."
+    l neutral "And our house is right across the street from there. Sorry about it being kinda inconvenient, it was a mistake on the mover's part."
+    show mainchar
+    mc neutral"It's fine, a bit of extra work never hurt anyone."
 
     n "For the next 30 minutes, Lynne, [Mc], and Lynne's parents helped move the boxes across the street, and into their house."
-
-    mc "I think that's the last of it."
-
-    l "Yup, looks like it!"
+    show mainchar
+    mc neutral "I think that's the last of it."
+    show lynn
+    l neutral"Yup, looks like it!"
 
     "Lynne's Mother" "Would you like to come in and eat with us? We got some food delivered while we were hauling in the stuff."
-    
-    mc "Sure, that sounds nice!"
-
-    l "Alright, go wash up then. I'll get some stuff out so we can eat."
-
-    mc "Thanks!"
+    show mainchar
+    mc neutral "Sure, that sounds nice!"
+    show lynn
+    l neutral "Alright, go wash up then. I'll get some stuff out so we can eat."
+    show mainchar
+    mc neutral"Thanks!"
 
     scene bg bathroom with fade
+    show mainchar
+    mc neutral "Alright, time to wash my hands."
 
-    mc "Alright, time to wash my hands."
+    g scared "You need to get home NOW."
+    show mainchar
+    mc neutral "What's this about? You yourself said that my life was stupid boring, and now here you are, raining on the first semi-interesting thing that's happened today."
 
-    g "You need to get home NOW."
+    g scared "That's not why you need to head home, you dunce!"
 
-    mc "What's this about? You yourself said that my life was stupid boring, and now here you are, raining on the first semi-interesting thing that's happened today."
+    g scared "The reapers come out at midnight! If you don't start heading home soon, they'll chase us through the streets!"
+    show mainchar
+    mc neutral "And? I easily outran them the first time I had to deal with them."
 
-    g "That's not why you need to head home, you dunce!"
+    g scared "That was because I was still settling into your body! Now that I've been here for a whole day, they're going to be much more aggressive!"
+    show mainchar
+    mc neutral "Stop fear mongering. Everything is gonna be fine."
 
-    g "The reapers come out at midnight! If you don't start heading home soon, they'll chase us through the streets!"
+    mc neutral"This is the first good thing to happen to me in a while, and I'm not gonna let some stupid paranoid ghoul ruin it for me!"
 
-    mc "And? I easily outran them the first time I had to deal with them."
-
-    g "That was because I was still settling into your body! Now that I've been here for a whole day, they're going to be much more aggressive!"
-
-    mc "Stop fear mongering. Everything is gonna be fine."
-
-    mc "This is the first good thing to happen to me in a while, and I'm not gonna let some stupid paranoid ghoul ruin it for me!"
-
-    g "Please... Just listen to me. Just this once, [Mc]."
-
-    mc "I am not going to repeat myself. I am going to enjoy eating dinner with Lynne's family before I head home, and that's final."
+    g scared "Please... Just listen to me. Just this once, [Mc]."
+    show mainchar
+    mc neutral "I am not going to repeat myself. I am going to enjoy eating dinner with Lynne's family before I head home, and that's final."
 
     n "[Mc] turns off the water, and dries his hands."
-
-    mc "AND FOR THE FINAL TIME, STOP BOTHERING ME WHILE I'M AROUND OTHER PEOPLE!"
+    show mainchar
+    mc neutral "AND FOR THE FINAL TIME, STOP BOTHERING ME WHILE I'M AROUND OTHER PEOPLE!"
     #sadge
-    g"....."
+    g scared "....."
     scene bg diningtable with fade
-    mc "Alright, I'm ready to eat!"
+    show mainchar
+    mc neutral"Alright, I'm ready to eat!"
 
-    l "Alright, I'll bring out the food."
+    l neutral"Alright, I'll bring out the food."
 
     #food is paella (mmmmm yummy)
 
     "Lynne's Mother" "So, I'm assuming that you go to school around here?"
+    show mainchar
+    mc neutral "Yeah, I actually go to the school up the street from here. "
 
-    mc "Yeah, I actually go to the school up the street from here. "
-
-    mc "Its exam season right now, so I've been studying nonstop actually"
+    mc neutral "Its exam season right now, so I've been studying nonstop actually"
 
     "Lynne's Father" "Oh, sorry for taking you away from your studies then."
+    show mainchar
+    mc neutral "Oh, you don't have to apologize. I needed a break from studying anyways."
 
-    mc "Oh, you don't have to apologize. I needed a break from studying anyways."
-
-    l "I got the food! Lets dig in!"
+    l neutral"I got the food! Lets dig in!"
 
     n "They sit down, and begin to enjoy the rather average-tasting takeout."
 
-    l "If you're currently going to that school up the street from here, do you mind showing me around a bit after you're done with exams?"
-
-    mc "If I have the time, yeah. I don't really mind doing that."
+    l neutral "If you're currently going to that school up the street from here, do you mind showing me around a bit after you're done with exams?"
+    show mainchar
+    mc neutral"If I have the time, yeah. I don't really mind doing that."
 
     l "Thanks."
 
     l "On the topic of stuff nearby, where exactly do you live?"
+    show mainchar
+    mc neutral"Not too far from here to be completely honest. It's due north, and it'll probably take you like 15 minutes to walk there."
 
-    mc "Not too far from here to be completely honest. It's due north, and it'll probably take you like 15 minutes to walk there."
-
-    mc "If you're wondering about the house number, it's 3617, the house with the tan roof."
+    mc neutral"If you're wondering about the house number, it's 3617, the house with the tan roof."
 
     l "Alright, I'll keep that in mind. I'll probably swing by there after exam season so you can show me around."
 
     "Lynne's Mother" "Speaking of your house, did you call home and tell your folks that you'd be eating with us tonight? I'd hate to give them a scare!"
-
-    mc "It's fine, I made sure to send them a quick text not long after I started helping the rest of you."
+    show mainchar
+    mc neutral"It's fine, I made sure to send them a quick text not long after I started helping the rest of you."
 
     "Lynne's Father" "Your parents were okay with it?"
-
-    mc "Yeah. They're usually pretty hands off."
+    show mainchar
+    mc neutral"Yeah. They're usually pretty hands off."
 
     "Lynne's Mother" "Are they really? I'd never be caught dead letting my daughter wander around at night!"
-
-    mc "That's just how my family is, and how its always been. Nothing really that special."
+    show mainchar
+    mc neutral"That's just how my family is, and how its always been. Nothing really that special."
 
     n "The topic eventually shifts, and after a bit more conversation, everyone finishes eating."
 
     "Lynne's Mother" "Feel free to head out!"
-
-    mc "But I haven't helped with the dishes yet?"
+    show mainchar
+    mc neutral "But I haven't helped with the dishes yet?"
 
     "Lynne's Father" "You've already done enough with helping us haul those boxes inside earlier, I'd hate to ask anything more of you."
 
     "Lynne's Mother" "Anyways, your parents are probably waiting for you now anyways."
-
-    mc "Are you sure you don't want any help? I'd be more than happy to help out a bit more."
+    show mainchar
+    mc neutral"Are you sure you don't want any help? I'd be more than happy to help out a bit more."
 
     "Lynne's Mother" "Yeah, we should be fine. Once again, thank you for the help!"
-
-    mc "Alright then, I'll head out. If you need any more help, just let me know!"
+    show mainchar
+    mc neutral"Alright then, I'll head out. If you need any more help, just let me know!"
 
     n "[Mc] heads out, and starts on his way home."
 
-    g "God, we are so screwed. What time is it anyways?"
+    g scared "God, we are so screwed. What time is it anyways?"
+    show mainchar
+    mc neutral "It's 11:35."
 
-    mc "It's 11:35."
+    g scared "Good. If you rush, you might be ab-"
+    show mainchar
+    mc neutral"We need to have a serious conversation."
 
-    g "Good. If you rush, you might be ab-"
+    g shocked "Huh?"
+    show mainchar
+    mc neutral"You heard what I said. We need to have a serious conversation about boundaries."
 
-    mc "We need to have a serious conversation."
+    mc neutral"You decided to come into MY body, and so far you've done nothing but be rude to me, make demands, and act like what you want comes before everything else."
 
-    g "Huh?"
-
-    mc "You heard what I said. We need to have a serious conversation about boundaries."
-
-    mc "You decided to come into MY body, and so far you've done nothing but be rude to me, make demands, and act like what you want comes before everything else."
-
-    mc "I didn't ask for any of this, and here you are acting like you have any right to impose upon the way that I live my life. So, I think that I'm justified for wanting to set some boundaries."
+    mc neutral"I didn't ask for any of this, and here you are acting like you have any right to impose upon the way that I live my life. So, I think that I'm justified for wanting to set some boundaries."
     
-    mc "First off, you don't have any jurisdiction over how I'm going to live my life."
+    mc neutral "First off, you don't have any jurisdiction over how I'm going to live my life."
 
     #reaper in distance
 
-    mc "Second, you will refrain from talking to me while I'm around other people. I can't afford to look schizophrenic. "
+    mc neutral "Second, you will refrain from talking to me while I'm around other people. I can't afford to look schizophrenic. "
     
     #reaper gets closer
 
-    g "Uhhhhhhhh...."
-    
-    mc "And thirdly, I expect you to respect my privacy as much as you possibly can."
+    g scared "Uhhhhhhhh...."
+    show mainchar
+    mc neutral "And thirdly, I expect you to respect my privacy as much as you possibly can."
 
     #reaper is fully visible
 
-    mc "It looks like we're gonna have to continue this conversation later."
+    mc scared "It looks like we're gonna have to continue this conversation later."
 
     # running sfx
 
@@ -565,131 +587,133 @@ label start:
 
     #how should I indicate the fact that theyre currently running?
 
-    g "What time is it?"
+    g scared "What time is it?"
+    show mainchar
+    mc scared"It looks like its 11:52 now, why?"
 
-    mc "It looks like its 11:52 now, why?"
+    g scared"Alright then. We have 8 minutes to get back before a second one shows up. "
+    show mainchar
+    mc shocked "A SECOND ONE???"
 
-    g "Alright then. We have 8 minutes to get back before a second one shows up. "
+    g scared "Yeah. There can only be three of them chasing us at once, but they're all extraordinarily crafty."
 
-    mc "A SECOND ONE???"
+    g scared "If things get bad, I do have a bit of a trump card, but I'm not too sure if you'd like it."
+    show mainchar
+    mc scared "Never mind that, we just need to get home."
 
-    g "Yeah. There can only be three of them chasing us at once, but they're all extraordinarily crafty."
-
-    g "If things get bad, I do have a bit of a trump card, but I'm not too sure if you'd like it."
-
-    mc "Never mind that, we just need to get home."
-
-    mc "We're less than 5 minutes away from home, if I keep at this pace, we should be there before midnight."
-
+    mc scared "We're less than 5 minutes away from home, if I keep at this pace, we should be there before midnight."
+    show lynne
     "???""HEY! SLOW DOWN A LITTLE WILL YA!" 
+    show mainchar
+    mc shocked "Huh?"
 
-    mc "Huh?"
+    g shocked "Huh?"
 
-    g "Huh?"
+    l neutral "C'MON, SLOWING DOWN A LITTLE WON'T KILL YOU!"
 
-    l "C'MON, SLOWING DOWN A LITTLE WON'T KILL YOU!"
+    l neutral"I JUST GOTTA GIVE YOU SOME OF THE LEFTOVERS!"
 
-    l "I JUST GOTTA GIVE YOU SOME OF THE LEFTOVERS!"
+    g shocked "Oh my lord. its going to get infinitely worse now."
+    show mainchar
+    mc neutral"What do you mean by that?"
 
-    g "Oh my lord. its going to get infinitely worse now."
+    g scared "The reason why reapers SPECIFICALLY come out at night is because they're still visible to mortals. If they came out during the day, they'd just cause problems. That's why more show up as the night progresses."
+    show mainchar
+    mc shocked "Ah. So what you're saying is: We are about to get someone innocent implicated in our problems."
 
-    mc "What do you mean by that?"
+    g scared "Yeah, pretty much."
+    show mainchar
+    mc neutral"It'd probably be best to just stop, grab the food, and then keep running at this point; It'd get her to leave faster so she won't end up getting implicated in our mess."
 
-    g "The reason why reapers SPECIFICALLY come out at night is because they're still visible to mortals. If they came out during the day, they'd just cause problems. That's why more show up as the night progresses."
-
-    mc "Ah. So what you're saying is: We are about to get someone innocent implicated in our problems."
-
-    g "Yeah, pretty much."
-
-    mc "It'd probably be best to just stop, grab the food, and then keep running at this point; It'd get her to leave faster so she won't end up getting implicated in our mess."
-
-    g "Sounds like a plan."
+    g neutral "Sounds like a plan."
 
     n "[Mc] starts to slow down, and after a few seconds, comes to a complete stop, not daring to start walking backwards and losing more time."
 
     n "After a few seconds, Lynne catches up to him."
 
-    l "*pant* *pant*"
+    l neutral "*pant* *pant*"
 
-    l "God, you're fast. Anyways, my folks wanted to give you some of the leftovers from the food."
+    l neutral "God, you're fast. Anyways, my folks wanted to give you some of the leftovers from the food."
 
     n "Lynne hands [Mc] a small plastic bag, with some tupperware containers inside of it."
-
-    mc "Thanks! I do have to get going now, so see y-"
+    show mainchar
+    mc neutral "Thanks! I do have to get going now, so see y-"
 
     n "A loud shriek pierces the nights tranquility."
     #cool auraful reaper cg
     "???" "COME FORTH, DENIER OF DEATH'S CERTAINTY!"
-
-    mc "Sh*t."
+    show mainchar
+    mc scared "Sh*t."
 
     l "What was that !?"
-
-    mc "C'mon, we gotta go. I don't have time to explain."
+    show mainchar
+    mc scared "C'mon, we gotta go. I don't have time to explain."
 
     l "Why the hell are you being chased by a reaper?"
 
-    g "!!!"
-    
-    mc "How do you know what that is?"
+    g shocked "!!!"
+    show mainchar
+    mc shocked"How do you know what that is?"
 
-    l "How do you know??"
+    l shocked "How do you know??"
 
-    l "The only reason I know is because my grandfather was a shaman, so how does some random kid like you know about that?"
+    l neutral"The only reason I know is because my grandfather was a shaman, so how does some random kid like you know about that?"
 
-    l "And on top of that, whats up with that weird spiritual pressure around you too? It's like twice as strong when compared to a normal person!"
+    l shocked "And on top of that, whats up with that weird spiritual pressure around you too? It's like twice as strong when compared to a normal person!"
 
     "Reaper" "COME FORTH, YOU SINNER. ACCEPT YOUR JUDGMENT."
+    show mainchar
+    mc scared "Can we continue this later? I really don't wanna waste any more time letting that... thing get any closer to us." 
 
-    mc "Can we continue this later? I really don't wanna waste any more time letting that... thing get any closer to us." 
-
-    l "Fine, but don't think that this conversation is over with."
+    l neutral "Fine, but don't think that this conversation is over with."
 
     n "The two of them continue to run."
+    show mainchar
+    mc scared "S**t. It's midnight."
 
-    mc "S**t. It's midnight."
-
-    l "YOU'VE GOT TWO OF THEM AFTER YOU ALREADY? WHAT ARE YOU EVEN DOING?"
-
-    mc "Lets brush past that for now, lets just focus on getting to safety."
+    l shocked"YOU'VE GOT TWO OF THEM AFTER YOU ALREADY? WHAT ARE YOU EVEN DOING?"
+    show mainchar
+    mc scared "Lets brush past that for now, lets just focus on getting to safety."
 
     n "The two of them quickly arrive on [Mc]'s street."
 
     #Reaper at both ends of street.
+    show mainchar
+    mc scared "Sh*t. "
 
-    mc "Sh*t. "
+    l  scared "Well then."
+    show mainchar
+    mc neutral"Connie, what should we do?"
 
-    l "Well then."
+    g scared "Well, I guess there was that trump card, but are you absolutely sure that you want to use it?"
+    show mainchar
+    mc scared "What other choice do we have?"
 
-    mc "spirit, what should we do?"
-
-    g "Well, I guess there was that trump card, but are you absolutely sure that you want to use it?"
-
-    mc "What other choice do we have?"
-
-    g "Alright then, just don't say I didn't warn you."
+    g scared "Alright then, just don't say I didn't warn you."
 
     #SpiritFlame cg
 
-    l "WHAT ARE YOU DOING!?"
+    l shocked "WHAT ARE YOU DOING!?"
 
-    g "This is a power bestowed upon you by me."
+    g neutral"This is a power bestowed upon you by me."
 
-    g "I believe that the previous user of this power named it \"Spirit flame\". Pretty dull name, but I suppose that it gets the job done."
+    g neutral"I believe that the previous user of this power named it \"Spirit flame\". Pretty dull name, but I suppose that it gets the job done."
 
-    g "Now, use it to repel the reapers!"
+    g neutral"Now, use it to repel the reapers!"
 
     n "[Mc] waves his hands out in the direction of the reapers, and upon doing so, a wall of blue flames arise from the floor, surrounding the reapers."
+    show mainchar
+    mc shocked "Quick, lets get inside while they're trapped!"
 
-    mc "Quick, lets get inside while they're trapped!"
+    l neutral"And then, you'll explain everything to me, right?"
+    show mainchar
+    mc neutral "Ehhh..."
 
-    l "And then, you'll explain everything to me, right?"
+    l neutral"You'd better."
 
-    mc "Ehhh..."
+    n neutral"The two of them enter [Mc]'s house."
 
-    l "You'd better."
-
-    n "The two of them enter [Mc]'s house."
+    #TODO: WRITE LYNNE CONVO!!!!!!
 
     scene bg black 
 
@@ -702,7 +726,13 @@ label start:
     "Lumpkinn" "For now, ta ta!"
     
     n "Save chapter 1 clear data?"
-    # add in save prompt here.
+    
+    menu: 
+        "Yes.":
+            $ renpy.run(ShowMenu("save"))
+        "No.":
+            return()
+    
 
     with fade
     return
