@@ -13,11 +13,16 @@ default score = 0
 #you can change font color of text here using "color=#<Color in hex here>"
 define e = Character("Eileen")
 #prospective names: Ashton, 
-define mc = Character("MC", color="#e74e4eff")
+define mc = Character("MC", color="#e74e4eff", image="neutralmc")
 
-define g = Character("Spirit", color="#8f8585c4", what_color="#8f8585c4")
+#image neutralmc confused = "images/MCConfused.png"
+#image neutralmc scared = "" 
+#image neutralmc shocked = ""
+#image neutralmc surprised = "images/MCSurprised.png"
 
-define l = Character("Lynne", color="#ffee00ff")
+define g = Character("Spirit", color="#8f8585c4", what_color="#8f8585c4", image="spiritneutral")
+#image spiritneutral 
+define l = Character("Lynne", color="#d95763", image="lynnneutral")
 
 define n = Character("Narrator", who_color="#508f20", what_color="#508f20")
 # The game starts here.
@@ -32,33 +37,25 @@ label start:
     # images directory to show it.
 
 
-    #TODO: make sprite for this, and hook it up!
-    scene bg devroom
-    with fade
+    #TODO: reaper sprites need to be done (do we wanna do cgs?)
 
-    # This shows a character sprite. A placeholder is used, but you can
-    # replace it by adding a file named "eileen happy.png" to the images
-    # directory.
-
-    #change to my sprite!
-    show eileen happy
 
     # These display lines of dialogue.
     scene black
-    e "{color="#db2a2a"}"Welcome to my little VN!"{/color}"
+    "Lumpkinn" "{color="#db2a2a"}"Welcome to my little VN!"{/color}"
 
-    e "This is my first time adventuring out into this kinda stuff, so sorry if it doesn't meet your expectations :/"
+    "Lumpkinn" "This is my first time adventuring out into this kinda stuff, so sorry if it doesn't meet your expectations :/"
 
-    e "I hope you enjoy it nonetheless though!"
+    "Lumpkinn" "I hope you enjoy it nonetheless though!"
 
-    scene bg entrywayNight
+    scene bg entrywaynight
 
     mc "11:30. That was the time that I get back from my tutoring session at Mrs. Pertholder's house."
     mc "It had just started to drizzle, and the moon was full, and shining its dull light over the streets."
     mc "It was getting worryingly close to exam season, so my parents thought that it'd be a good idea to get some tutoring."
     mc "Mrs. Pertholder was a good family friend of ours too, so she agreed to take care of it to sooth my parent's feelings about my exams."
 
-    scene bg LivingroomNight
+    scene bg livingroomnight
     mc "As I walked through the living room on my way to the kitchen, I took note of how melancholic everything felt."
     #TODO: Might be a good addition to add in some stock images to fade in that relate to what MC is talking about 
     mc "Typically, as soon as I walked through the door, I'd be saddled with countless chores to take care of, varying from taking care of the dishes, and doing some laundry"
@@ -67,19 +64,20 @@ label start:
 
     mc "It was a nice change of pace."
 
-    scene fridgeNight
+    scene bg fridgenight
     with fade
+    show neutralmc
     mc "Hmm, what should I get to eat? I'm still pretty hungry since I wasn't able to eat all too much while I was at Mrs. Pertholder's."
     
     with hpunch
-
+    show mcshocked
     mc "What was that!?"
 
-    scene bg LivingroomNight
-    
+    scene bg livingroomnight
+    show neutralmc
     mc "Sounds like it came from the side of the house, I should go make sure that there's nothing weird going on!"
 
-    scene bg entrywayNight
+    scene bg entrywaynight
     with fade
     n "[Mc] rushes out, only stopping to grab a umbrella on the off-chance that the rain started to pick up."
 
@@ -88,7 +86,7 @@ label start:
     n "A loud shriek pierces the soft tranquility of the night."
 
     "???" "AAAAAAAaaaaa......"
-
+    show mcscared 
     mc "Alright, that definitely did not come from the side of the house... I should probably still check up on whatever that was though."
 
     #TODO:Make choice to either head back, or keep going. both choices result in him going deeper.
@@ -105,15 +103,23 @@ label start:
 
     n "As [Mc] continues to follow the noise, he eventually arrives at the local graveyard."
 
+
+    show neutralmc
+
     mc "Yeah no. I'm not doing this."
 
     mc "There is no way that I'm ever going to go into that old, unsettling graveyard at god-knows what time at night."
 
+    show spirit_sprite
     "???" "Well, its a good thing you won't have to ~"
+
+    show mcshocked 
 
     mc "HUH??? WHAT WAS THAT???"
 
     n "A cold chill envelops [Mc]'s body, reaching all the way down to the bone."
+    
+    show mcscared
 
     mc "SCREW THIS! I'M NOT GONNA ENTERTAIN THIS ANY MORE!"
     scene bg middletown
@@ -134,22 +140,33 @@ label start:
     n "[Mc] continues to make a mad dash for his house."
 
 
-    scene  bg entrywayNight with fade
+    scene  bg entrywanNight with fade
+    
+    show mcscared
+
     mc"*pant* *pant* *pant*"
     mc "WHat was that???"
     mc" You know what? screw this, I'm going to bed"
 
     scene bg bedroom with fade
     mc "Maybe I'll be able to make sense of this tomorrow morning."    
-    scene bg black with fade
+    scene black with fade
     n"End of day one."
     
+    n"Do you want to save?"
+    menu: 
+        "Yes.":
+            $ renpy.run(ShowMenu("save"))
+        "No.":
+            return()
     #add save prompt
-    call screen confirm("Do you want to save?", yes_action=[ShowMenu('save'), return()], no_action=return())
 
     n"Start of day 2."
 
-    scene bg bedroom 
+    scene bg bedroom
+
+    show neutralmc
+
     mc "Yawwwwn"
     n "He rubs his eyes."
     #TODO: maybe add sprite of MC yawning?
@@ -172,6 +189,8 @@ label start:
 
     mc "Huh?"
 
+    show spirit_sprite
+
     "???" "Oh, don't you dare \"huh\" me!"
 
     "???" "And besides, its a little rude to not look at someone whenever they're talking, isn't it?"
@@ -179,19 +198,21 @@ label start:
 
     mc "What?"
 
-    mc "WHAT THE H*** IS GOING ON???"
+    show mcshocked
 
+    mc "WHAT THE H*** IS GOING ON???"
+    show spiritneutral 
     "???" "You're rather foul-mouthed, aren't you? I've barely known you for even a day, and I've already heard you curse three times~"
 
-    "???" "Doesn't really fit your whole \"Family guy \" persona all too well, does it?"
+    "???" "Doesn't really fit your whole \"wholesome guy\" persona all too well, does it?"
 
     #TODO: maybe implement a sprite of MC sighing?
 
 
     #TODO: these are the MC's thoughts. make sure to make them a different color to indicate that
-    mc "I still have no idea whats going on in the slightest..."
+    mc "{color="#919090"} I still have no idea whats going on in the slightest...{/color}"
 
-    mc "{color="#919090"}I guess this means that last night wasn't a dream either...{/color}"
+    mc "{color="#919090"} I guess this means that last night wasn't a dream either...{/color}"
 
     "???" "HEY! ARE YOU LISTENING TO ME AT ALL? Dumb mortals, not even able to do something as simple as pay attention to others when they're being spoken to."
 
@@ -209,7 +230,7 @@ label start:
 
     g "Yes, you buffoon! a spirit, a ghost, a poltergeist, or whatever you mortals call us now!"
 
-    #confused
+    show mcconfused
     mc "Okayyyy? And this concerns me how???"
 
     g "Well, I was in a hint of trouble yesteryear, and you happened to show up at an opportune time for me to... cohabitate with you."
@@ -232,7 +253,7 @@ label start:
 
     g "And now that I'm \"Cohabiting\" with you, It'll need to kill you to get to me."
     
-    #Mc shock
+    show mcshocked
     with vpunch
     mc "AND WHAT MADE YOU THINK THAT I'D AGREE WITH THAT!!!"
     
@@ -241,8 +262,11 @@ label start:
 
     g "And I promise not to, on one condition."
 
+    show neutralmc 
+
     mc "What is it?"
 
+    show spiritneutral 
     g "You help me regain something of mine."
 
     mc "What exactly do you want me to find for you?"
@@ -255,8 +279,10 @@ label start:
     
     g "Now, don't you have something to be doing?"
 
-    scene DiningTable
+    scene diningtable
     n "With a snap, [Mc] is returned back to the waking world, and after gaining his bearings, glances at the clock over at the corner."
+
+    show mcscared  
 
     mc "Crud, I'm gonna be late!"
 
@@ -407,7 +433,7 @@ label start:
 
     mc "Thanks!"
 
-    scene bg Bathroom with fade
+    scene bg bathroom with fade
 
     mc "Alright, time to wash my hands."
 
@@ -436,7 +462,7 @@ label start:
     mc "AND FOR THE FINAL TIME, STOP BOTHERING ME WHILE I'M AROUND OTHER PEOPLE!"
     #sadge
     g"....."
-    scene bg DiningTable with fade
+    scene bg diningtable with fade
     mc "Alright, I'm ready to eat!"
 
     l "Alright, I'll bring out the food."
